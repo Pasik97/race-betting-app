@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { PersistGate } from 'redux-persist/integration/react';
 import styled from 'styled-components';
 import TopBar from 'modules/TopBar/TopBar';
 import HomePage from 'modules/HomePage/HomePage';
@@ -20,19 +21,21 @@ const AppWrapper = styled.div`
    }
 `;
 
-const store = configureStore();
+const { store, persistor } = configureStore();
 
 const App: React.FC = () => (
    <Provider store={store}>
-      <BrowserRouter>
-         <TopBar />
-         <AppWrapper>
-            <Switch>
-               <Route exact path='/' component={HomePage} />
-               <Route exact path='/races' component={RacesPage} />
-            </Switch>
-         </AppWrapper>
-      </BrowserRouter>
+      <PersistGate persistor={persistor}>
+         <BrowserRouter>
+            <TopBar />
+            <AppWrapper>
+               <Switch>
+                  <Route exact path='/' component={HomePage} />
+                  <Route exact path='/races' component={RacesPage} />
+               </Switch>
+            </AppWrapper>
+         </BrowserRouter>
+      </PersistGate>
    </Provider>
 );
 

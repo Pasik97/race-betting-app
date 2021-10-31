@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import initReducer from "./Initial/reducers";
+import racesReducer from "./races/reducers";
 
 const reducers = combineReducers({
-   init: initReducer,
+   races: racesReducer,
 })
 
 export default reducers;

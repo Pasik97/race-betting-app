@@ -18,11 +18,14 @@ export const TopBarWrapper = styled.header`
    }
 `;
 
-export const AppTitle = styled.h2`
+export const AppTitle = styled(Link)`
    font-size: 28px;
    line-height: 32px;
    color: #01263A;
    margin: 0;
+   font-weight: 700;
+   cursor: pointer;
+   text-decoration: none;
 `;
 
 export const LinksWrapper = styled.div`

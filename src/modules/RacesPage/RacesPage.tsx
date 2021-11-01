@@ -4,12 +4,12 @@ import * as P from './parts';
 import RacesList from './RacesList/RacesList';
 import { getRacesRequest } from 'store/races/actions';
 import LoaderWithOverlay from 'components/LoaderWithOverlay/LoaderWithOverlay';
-import { getisFetchingRaces } from 'store/races/selectors';
+import { getIsFetchingRaces } from 'store/races/selectors';
 
 const RacesPage: React.FC = () => {
    const dispatch = useDispatch();
 
-   const isFetchingRaces = useSelector(getisFetchingRaces);
+   const isFetchingRaces = useSelector(getIsFetchingRaces);
 
    useEffect(() => {
       dispatch(getRacesRequest());

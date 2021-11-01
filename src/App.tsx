@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import TopBar from 'modules/TopBar/TopBar';
 import HomePage from 'modules/HomePage/HomePage';
 import RacesPage from 'modules/RacesPage/RacesPage';
+import SingleRacePage from 'modules/SingleRacePage/SingleRacePage';
 import configureStore from 'store/configureStore';
 import media from 'utils/media';
 
@@ -32,6 +33,7 @@ const App: React.FC = () => (
                <Switch>
                   <Route exact path='/' component={HomePage} />
                   <Route exact path='/races' component={RacesPage} />
+                  <Route exact path='/races/:id' component={SingleRacePage} />
                </Switch>
             </AppWrapper>
          </BrowserRouter>

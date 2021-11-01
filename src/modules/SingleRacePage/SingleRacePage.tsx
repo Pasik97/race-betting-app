@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as P from './parts';
 import { SingleRacePageProps } from './constants';
+import RaceHeader from './RaceHeader/RaceHeader';
+import BetAmount from './BetAmount/BetAmount';
+import ParticipantsList from './ParticipantsList/ParticipantsList';
 import LoaderWithOverlay from 'components/LoaderWithOverlay/LoaderWithOverlay';
 import { getIsFetchingRaces } from 'store/races/selectors';
 import { getRaceByIdRequest } from 'store/races/actions';
@@ -24,6 +27,9 @@ const SingleRacePage: React.FC<SingleRacePageProps> = (
    return (
       <P.SingleRacePageWrapper>
          <LoaderWithOverlay loading={isFetchingRaces || isFetchingParticipants} />
+         <RaceHeader raceId={id} />
+         <BetAmount raceId={id} />
+         <ParticipantsList raceId={id} />
       </P.SingleRacePageWrapper>
    );
 }

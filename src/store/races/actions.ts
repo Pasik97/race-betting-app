@@ -30,3 +30,9 @@ export const getRaceByIdFail = (error: AxiosError): Extract<C.RacesAction, { typ
    type: C.RaceActionType.GetRaceByIdFail,
    error,
 });
+
+export const setRaceBetAmount = (raceId: string, amount: number): Extract<C.RacesAction, { type: C.RaceActionType.SetRaceBetAmount }> => ({
+   type: C.RaceActionType.SetRaceBetAmount,
+   raceId,
+   amount,
+});

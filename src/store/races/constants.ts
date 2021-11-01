@@ -8,11 +8,23 @@ export enum RaceActionType {
    GetRaceByIdRequest = 'races/GET_RACE_BY_ID_REQUEST',
    GetRaceByIdSuccess = 'races/GET_RACE_BY_ID_SUCCESS',
    GetRaceByIdFail = 'races/GET_RACE_BY_ID_FAIL',
+   SetRaceBetAmount = 'races/SET_RACE_BET_AMOUNT',
+}
+
+export interface Bet {
+   amount?: number;
+   firstPlace?: number;
+   secondPlace?: number;
+   thirdPlace?: number;
+}
+
+export interface RaceWithBet extends Race {
+   bet?: Bet;
 }
 
 export interface RacesState {
    isFetching: boolean;
-   races: Record<string, Race>;
+   races: Record<string, RaceWithBet>;
    order: number[];
 }
 
@@ -39,4 +51,8 @@ export type RacesAction = {
 } | {
    type: RaceActionType.GetRaceByIdFail;
    error: AxiosError;
+} | {
+   type: RaceActionType.SetRaceBetAmount;
+   raceId: string;
+   amount: number;
 };

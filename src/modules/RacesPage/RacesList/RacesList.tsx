@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import * as P from './parts';
+import Race from './Race';
 import * as TP from 'components/BasicTable/parts';
 import { getRaces, getRacesOrder } from 'store/races/selectors';
 
@@ -32,13 +33,7 @@ const RacesList: React.FC = () => {
             <TP.HeaderCell>Race Name</TP.HeaderCell>
             <TP.HeaderCell>Status</TP.HeaderCell>
          </TP.Row>
-         {filteredRacesOrder?.map((id) => (
-            <TP.Row key={races[id].id}>
-               <TP.Cell><P.StyledLink to={'/races/' + races[id].id}>{races[id].id}</P.StyledLink></TP.Cell>
-               <TP.Cell><P.StyledLink to={'/races/' + races[id].id}>{races[id].name}</P.StyledLink></TP.Cell>
-               <TP.Cell><TP.Label>{races[id].active ? 'Active' : 'Inactive'}</TP.Label></TP.Cell>
-            </TP.Row>
-         ))}
+         {filteredRacesOrder?.map((id) => <Race key={id} race={races[id]} />)}
       </P.RacesListWrapper>
    );
 };

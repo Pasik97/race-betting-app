@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Race /> should render race id and name as link to single race page and "Active" label if race is active 1`] = `
+<div
+  className="sc-gKclnd huABHg"
+>
+  <div
+    className="sc-eCImPb jHOpYB"
+  >
+    <a
+      className="sc-gsDKAQ kkNNhb"
+      href="/races/1"
+      onClick={[Function]}
+    >
+      1
+    </a>
+  </div>
+  <div
+    className="sc-eCImPb jHOpYB"
+  >
+    <a
+      className="sc-gsDKAQ kkNNhb"
+      href="/races/1"
+      onClick={[Function]}
+    >
+      mock race
+    </a>
+  </div>
+  <div
+    className="sc-eCImPb jHOpYB"
+  >
+    <p
+      className="sc-iCfMLu iDUcVZ"
+    >
+      Active
+    </p>
+  </div>
+</div>
+`;
+
+exports[`<Race /> should render race id and name as link to single race page and "Inactive" label if race is inactive 1`] = `
+<div
+  className="sc-gKclnd huABHg"
+>
+  <div
+    className="sc-eCImPb jHOpYB"
+  >
+    <a
+      className="sc-gsDKAQ kkNNhb"
+      href="/races/2"
+      onClick={[Function]}
+    >
+      2
+    </a>
+  </div>
+  <div
+    className="sc-eCImPb jHOpYB"
+  >
+    <a
+      className="sc-gsDKAQ kkNNhb"
+      href="/races/2"
+      onClick={[Function]}
+    >
+      second mock race
+    </a>
+  </div>
+  <div
+    className="sc-eCImPb jHOpYB"
+  >
+    <p
+      className="sc-iCfMLu iDUcVZ"
+    >
+      Inactive
+    </p>
+  </div>
+</div>
+`;

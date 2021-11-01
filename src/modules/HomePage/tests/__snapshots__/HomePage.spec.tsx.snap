@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> should render welcome text 1`] = `
+<p
+  className="sc-bdvvtL iYyzJq"
+>
+  Welcome in races betting application. Use navigation to see current races.
+</p>
+`;

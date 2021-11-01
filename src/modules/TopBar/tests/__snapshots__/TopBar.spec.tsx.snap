@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TopBar /> should render header with title as link to home page and link to races page 1`] = `
+<header
+  className="sc-bdvvtL dktecm"
+>
+  <a
+    className="sc-gsDKAQ gtcDQK"
+    href="/"
+    onClick={[Function]}
+    title="Race betting system"
+  >
+    Race betting system
+  </a>
+  <div
+    className="sc-dkPtRN jUPLyL"
+  >
+    <a
+      className="sc-hKwDye caybUZ"
+      href="/races"
+      onClick={[Function]}
+    >
+      Races
+    </a>
+  </div>
+</header>
+`;

@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RacesList /> should render checkbox and races list 1`] = `
+<div
+  className="sc-bdvvtL"
+>
+  <div
+    className="sc-dkPtRN eAHUEW"
+  >
+    <p
+      className="sc-iCfMLu iDUcVZ"
+    >
+      Show only active races:
+    </p>
+    <input
+      checked={false}
+      className="sc-hKwDye deOSNL"
+      name="activeRaces"
+      onChange={[Function]}
+      type="checkbox"
+    />
+  </div>
+  <div
+    className="sc-gKclnd huABHg"
+  >
+    <div
+      className="sc-eCImPb sc-jRQBWg jHOpYB enxhMK"
+    >
+      Id
+    </div>
+    <div
+      className="sc-eCImPb sc-jRQBWg jHOpYB enxhMK"
+    >
+      Race Name
+    </div>
+    <div
+      className="sc-eCImPb sc-jRQBWg jHOpYB enxhMK"
+    >
+      Status
+    </div>
+  </div>
+  (Race /)
+  (Race /)
+</div>
+`;
+
+exports[`<RacesList /> should render only active races if shouldDisplayActive is set to true 1`] = `
+<div
+  className="sc-bdvvtL"
+>
+  <div
+    className="sc-dkPtRN eAHUEW"
+  >
+    <p
+      className="sc-iCfMLu iDUcVZ"
+    >
+      Show only active races:
+    </p>
+    <input
+      checked={true}
+      className="sc-hKwDye deOSNL"
+      name="activeRaces"
+      onChange={[Function]}
+      type="checkbox"
+    />
+  </div>
+  <div
+    className="sc-gKclnd huABHg"
+  >
+    <div
+      className="sc-eCImPb sc-jRQBWg jHOpYB enxhMK"
+    >
+      Id
+    </div>
+    <div
+      className="sc-eCImPb sc-jRQBWg jHOpYB enxhMK"
+    >
+      Race Name
+    </div>
+    <div
+      className="sc-eCImPb sc-jRQBWg jHOpYB enxhMK"
+    >
+      Status
+    </div>
+  </div>
+  (Race /)
+</div>
+`;

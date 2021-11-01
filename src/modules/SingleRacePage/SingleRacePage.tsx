@@ -22,7 +22,7 @@ const SingleRacePage: React.FC<SingleRacePageProps> = (
    useEffect(() => {
       dispatch(getRaceByIdRequest(id));
       dispatch(getParticipantsRequest());
-   }, [dispatch]);
+   }, [dispatch, id]);
 
    return (
       <P.SingleRacePageWrapper>

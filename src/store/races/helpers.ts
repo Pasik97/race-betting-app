@@ -1,11 +1,11 @@
 import { Race } from "api/apiModels";
-import { RacesState, RaceWithBet } from "./constants";
+import * as C from "./constants";
 
 export const transformRacesToRacesState = (
-    currentStateRaces: Record<string, RaceWithBet>,
+    currentStateRaces: Record<string, C.RaceWithBet>,
     racesToTransform: Race[],
-): Pick<RacesState, 'races' | 'order'> => racesToTransform.reduce(
-    (acc: Pick<RacesState, 'races' | 'order'>, race) => ({
+): Pick<C.RacesState, 'races' | 'order'> => racesToTransform.reduce(
+    (acc: Pick<C.RacesState, 'races' | 'order'>, race) => ({
         order: [...acc.order, race.id],
         races: {
             ...acc.races,
@@ -17,3 +17,25 @@ export const transformRacesToRacesState = (
     }),
     { races: { ...currentStateRaces }, order: [] },
 );
+
+export const createBetWithUpdatedAmount = (currentRaceBet: C.Bet | undefined, amount: number): C.Bet => currentRaceBet
+    ? { ...currentRaceBet, amount: amount }
+    : { amount };
+
+export const createBetWithUpdatedPlace = (
+    currentRaceBet: C.Bet | undefined,
+    placeToSet: C.Places,
+    participantId: number,
+) => {
+    const newBet: C.Bet = currentRaceBet ? { ...currentRaceBet } : {};
+
+    Object.values(C.Places).forEach((place) => {
+        if (newBet[place] === participantId) {
+            newBet[place] = undefined;
+        }
+    });
+
+    newBet[placeToSet] = participantId;
+
+    return newBet;
+};

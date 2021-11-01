@@ -4,7 +4,7 @@ import * as P from './parts';
 import { setRaceBetAmount } from 'store/races/actions';
 import { doubleNumberRegex } from 'utils/validators';
 import ApplicationState from 'store/ApplicationState';
-import { getRaceBetAmount } from 'store/races/selectors';
+import { getRaceBetAmountById } from 'store/races/selectors';
 
 interface BetAmountProps {
    raceId: string;
@@ -13,7 +13,7 @@ interface BetAmountProps {
 const BetAmount: React.FC<BetAmountProps> = (({ raceId }) => {
    const dispatch = useDispatch();
 
-   const raceBetAmount = useSelector((state: ApplicationState) => getRaceBetAmount(state, raceId));
+   const raceBetAmount = useSelector((state: ApplicationState) => getRaceBetAmountById(state, raceId));
 
    const [amount, setAmount] = useState<string>(raceBetAmount?.toString() || '0');
 

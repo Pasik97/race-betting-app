@@ -15,3 +15,5 @@ export const StyledRow = styled(Row)`
       grid-template-columns: 0.5fr 6fr 0.5fr 0.5fr 0.5fr;
    }
 `;
+
+export const Radio = styled.input``;

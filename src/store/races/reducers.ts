@@ -1,5 +1,5 @@
 import * as C from './constants';
-import { transformRacesToRacesState } from './helpers';
+import * as H from './helpers';
 
 const racesReducer = (state: C.RacesState = C.initilRacesState, action: C.RacesAction): C.RacesState => {
    switch (action.type) {
@@ -12,7 +12,7 @@ const racesReducer = (state: C.RacesState = C.initilRacesState, action: C.RacesA
       case C.RaceActionType.GetRacesSuccess:
          return {
             ...state,
-            ...transformRacesToRacesState(state.races, action.races),
+            ...H.transformRacesToRacesState(state.races, action.races),
             isFetching: false,
          }
       case C.RaceActionType.GetRaceByIdSuccess:
@@ -34,9 +34,10 @@ const racesReducer = (state: C.RacesState = C.initilRacesState, action: C.RacesA
             isFetching: false,
          }
       case C.RaceActionType.SetRaceBetAmount:
-         const newRaceBet: C.Bet = state.races[action.raceId]?.bet
-            ? { ...state.races[action.raceId].bet, amount: action.amount }
-            : { amount: action.amount };
+         const betUpdatedAmount: C.Bet = H.createBetWithUpdatedAmount(
+            state.races[action.raceId]?.bet,
+            action.amount,
+         );
 
          return {
             ...state,
@@ -44,7 +45,24 @@ const racesReducer = (state: C.RacesState = C.initilRacesState, action: C.RacesA
                ...state.races,
                [action.raceId]: {
                   ...state.races[action.raceId],
-                  bet: newRaceBet,
+                  bet: betUpdatedAmount,
+               },
+            },
+         }
+      case C.RaceActionType.SetRaceBetPlace:
+         const betUpdatedPlaces: C.Bet = H.createBetWithUpdatedPlace(
+            state.races[action.raceId]?.bet,
+            action.place,
+            action.participantId
+         );
+
+         return {
+            ...state,
+            races: {
+               ...state.races,
+               [action.raceId]: {
+                  ...state.races[action.raceId],
+                  bet: betUpdatedPlaces,
                },
             },
          }

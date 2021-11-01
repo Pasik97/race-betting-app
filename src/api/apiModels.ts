@@ -6,5 +6,5 @@ export interface Race {
    id: number;
    name: string;
    active: boolean;
-   participants: Array<Participant>;
+   participants: Array<number>;
 }

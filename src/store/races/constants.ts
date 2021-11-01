@@ -9,13 +9,17 @@ export enum RaceActionType {
    GetRaceByIdSuccess = 'races/GET_RACE_BY_ID_SUCCESS',
    GetRaceByIdFail = 'races/GET_RACE_BY_ID_FAIL',
    SetRaceBetAmount = 'races/SET_RACE_BET_AMOUNT',
+   SetRaceBetPlace = 'races/SET_RACE_BET_PLACE',
 }
 
-export interface Bet {
+export enum Places {
+   First = "first",
+   Second = "second",
+   Third = "third",
+}
+
+export interface Bet extends Partial<Record<Places, number>> {
    amount?: number;
-   firstPlace?: number;
-   secondPlace?: number;
-   thirdPlace?: number;
 }
 
 export interface RaceWithBet extends Race {
@@ -55,4 +59,9 @@ export type RacesAction = {
    type: RaceActionType.SetRaceBetAmount;
    raceId: string;
    amount: number;
+} | {
+   type: RaceActionType.SetRaceBetPlace;
+   raceId: string;
+   place: Places;
+   participantId: number;
 };

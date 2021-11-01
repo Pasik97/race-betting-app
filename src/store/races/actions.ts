@@ -36,3 +36,10 @@ export const setRaceBetAmount = (raceId: string, amount: number): Extract<C.Race
    raceId,
    amount,
 });
+
+export const setRaceBetPlace = (raceId: string, place: C.Places, participantId: number): Extract<C.RacesAction, { type: C.RaceActionType.SetRaceBetPlace }> => ({
+   type: C.RaceActionType.SetRaceBetPlace,
+   raceId,
+   place,
+   participantId,
+});

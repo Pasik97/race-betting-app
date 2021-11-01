@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ParticipantsList /> should render table header and participant component 1`] = `
+<div
+  className="sc-eCImPb"
+>
+  <div
+    className="sc-dkPtRN sc-jRQBWg bmFaAY dgjLOM"
+  >
+    <div
+      className="sc-bdvvtL sc-gsDKAQ YGxmD juxHvi"
+    >
+      Id
+    </div>
+    <div
+      className="sc-bdvvtL sc-gsDKAQ YGxmD juxHvi"
+    >
+      Participant Name
+    </div>
+    <div
+      className="sc-bdvvtL sc-gsDKAQ YGxmD juxHvi"
+    >
+      🥇
+    </div>
+    <div
+      className="sc-bdvvtL sc-gsDKAQ YGxmD juxHvi"
+    >
+      🥈
+    </div>
+    <div
+      className="sc-bdvvtL sc-gsDKAQ YGxmD juxHvi"
+    >
+      🥉
+    </div>
+  </div>
+  (Participant /)
+</div>
+`;

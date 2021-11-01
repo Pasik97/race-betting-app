@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BetAmount /> should render label and input 1`] = `
+<div
+  className="sc-bdvvtL kFCWXq"
+>
+  <p
+    className="sc-gsDKAQ cjWaGf"
+  >
+    Bet amount: 
+  </p>
+  <input
+    className="sc-dkPtRN crMWyS"
+    name="betAmount"
+    onChange={[Function]}
+    value="12"
+  />
+</div>
+`;

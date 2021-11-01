@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Participant /> should render participant id name and 3 inputs with type set to radio 1`] = `
+<div
+  className="sc-dkPtRN sc-jRQBWg bmFaAY dgjLOM"
+>
+  <div
+    className="sc-bdvvtL YGxmD"
+  >
+    1
+  </div>
+  <div
+    className="sc-bdvvtL YGxmD"
+  >
+    mock body
+  </div>
+  <div
+    className="sc-bdvvtL YGxmD"
+  >
+    <input
+      checked={false}
+      className="sc-gKclnd"
+      disabled={false}
+      onChange={[Function]}
+      type="radio"
+    />
+  </div>
+  <div
+    className="sc-bdvvtL YGxmD"
+  >
+    <input
+      checked={false}
+      className="sc-gKclnd"
+      disabled={false}
+      onChange={[Function]}
+      type="radio"
+    />
+  </div>
+  <div
+    className="sc-bdvvtL YGxmD"
+  >
+    <input
+      checked={false}
+      className="sc-gKclnd"
+      disabled={false}
+      onChange={[Function]}
+      type="radio"
+    />
+  </div>
+</div>
+`;

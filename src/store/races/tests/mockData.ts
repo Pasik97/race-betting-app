@@ -9,7 +9,7 @@ export const mockRace: RaceWithBet = {
    id: 1,
    name: 'mock race',
    active: true,
-   participants: [],
+   participants: [1],
    bet: {
       amount: 12,
    },

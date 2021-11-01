@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RaceHeader /> should render link to races page, race name and label "Active" if race is active 1`] = `
+Array [
+  <a
+    className="sc-hKwDye jqqwCx"
+    href="/races"
+    onClick={[Function]}
+  >
+    ‹ Back to races page
+  </a>,
+  <div
+    className="sc-bdvvtL dfGmNp"
+  >
+    <h2
+      className="sc-gsDKAQ eSsmNL"
+      title="mock race"
+    >
+      mock race
+    </h2>
+    <p
+      className="sc-dkPtRN cVLRqC"
+    >
+      Status: 
+      Active
+    </p>
+  </div>,
+]
+`;
+
+exports[`<RaceHeader /> should render link to races page, race name and label "Inactive" if race is inactive 1`] = `
+Array [
+  <a
+    className="sc-hKwDye jqqwCx"
+    href="/races"
+    onClick={[Function]}
+  >
+    ‹ Back to races page
+  </a>,
+  <div
+    className="sc-bdvvtL dfGmNp"
+  >
+    <h2
+      className="sc-gsDKAQ eSsmNL"
+      title="second mock race"
+    >
+      second mock race
+    </h2>
+    <p
+      className="sc-dkPtRN cVLRqC"
+    >
+      Status: 
+      Inactive
+    </p>
+  </div>,
+]
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleRacePage /> should render Loader and RacesList components 1`] = `
+<div
+  className="sc-bdvvtL eEHpxK"
+>
+  (LoaderWithOverlay /)
+  (RaceHeader /)
+  (BetAmount /)
+  (ParticipantsList /)
+</div>
+`;

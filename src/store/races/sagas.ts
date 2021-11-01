@@ -1,11 +1,13 @@
 import { call, put, takeLatest } from "redux-saga/effects";
+import { AxiosResponse } from "axios";
 import * as A from './actions';
 import * as C from './constants';
 import * as api from 'api';
+import { Race } from "api/apiModels";
 
 export function* getRacesWorker() {
    try {
-      const { data } = yield call(api.getRaces);
+      const { data }: AxiosResponse<Race[]> = yield call(api.getRaces);
 
       yield put(A.getRacesSuccess(data));
    } catch (error: any) {
@@ -15,7 +17,7 @@ export function* getRacesWorker() {
 
 export function* getRaceByIdWorker(action: Extract<C.RacesAction, { type: C.RaceActionType.GetRaceByIdRequest }>) {
    try {
-      const { data } = yield call(api.getRaceById, action.raceId);
+      const { data }: AxiosResponse<Race> = yield call(api.getRaceById, action.raceId);
 
       yield put(A.getRaceByIdSuccess(data));
    } catch (error: any) {

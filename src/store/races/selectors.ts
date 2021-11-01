@@ -1,7 +1,7 @@
 import { Race } from 'api/apiModels';
 import ApplicationState from 'store/ApplicationState';
 
-export const getisFetchingRaces = (state: ApplicationState): boolean => state.races.isFetching;
+export const getIsFetchingRaces = (state: ApplicationState): boolean => state.races.isFetching;
 
 export const getRaces = (state: ApplicationState): Record<string,  Race> => state.races.races;
 

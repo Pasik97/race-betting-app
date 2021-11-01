@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoaderWithOverlay /> should render divs if loading prop is set to true 1`] = `
+<div
+  className="sc-bdvvtL kGpeYK"
+>
+  <div
+    className="sc-gsDKAQ cFIvzm"
+  >
+    <div
+      className="sc-dkPtRN gYxWmj"
+    >
+      <span
+        className="sc-hKwDye bNnLqN"
+      />
+    </div>
+  </div>
+</div>
+`;

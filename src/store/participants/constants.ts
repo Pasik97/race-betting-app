@@ -9,12 +9,12 @@ export enum ParticipantsActionType {
 
 export interface ParticipantsState {
    isFetching: boolean;
-   participants: Participant[];
+   participants: Record<string, Participant>;
 }
 
 export const initilParticipantsState: ParticipantsState = {
    isFetching: false,
-   participants: [],
+   participants: {},
 };
 
 export type ParticipantsAction = {

@@ -4,7 +4,7 @@ import * as P from './parts';
 import * as TP from 'components/BasicTable/parts';
 // import ApplicationState from 'store/ApplicationState';
 // import { getRaceById } from 'store/races/selectors';
-import { getParticipants } from 'store/participants/selectors';
+import { getParticipantsEmptyStatus } from 'store/participants/selectors';
 
 interface ParticipantsListProps {
    raceId: string;
@@ -12,9 +12,9 @@ interface ParticipantsListProps {
 
 const ParticipantsList: React.FC<ParticipantsListProps> = (({ raceId }) => {
    // const race = useSelector((state: ApplicationState) => getRaceById(state, raceId));
-   const participants = useSelector(getParticipants);
+   const participants = useSelector(getParticipantsEmptyStatus);
 
-   return !participants.length ? null : (
+   return !participants ? null : (
       <P.ParticipantsListWrapper>
          <P.StyledRow>
             <TP.HeaderCell>Id</TP.HeaderCell>

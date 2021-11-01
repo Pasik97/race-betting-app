@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import * as P from './parts';
+import * as TP from 'components/BasicTable/parts';
 import { getRaces, getRacesOrder } from 'store/races/selectors';
 
 const RacesList: React.FC = () => {
@@ -18,7 +19,7 @@ const RacesList: React.FC = () => {
    return !order.length ? null : (
       <P.RacesListWrapper>
          <P.CheckboxWrapper>
-            <P.Label>Show only active races:</P.Label>
+            <TP.Label>Show only active races:</TP.Label>
             <P.Checkbox
                type="checkbox"
                name="activeRaces"
@@ -26,17 +27,17 @@ const RacesList: React.FC = () => {
                onChange={onCheckboxChange}
             />
          </P.CheckboxWrapper>
-         <P.Row>
-            <P.HeaderCell>Id</P.HeaderCell>
-            <P.HeaderCell>Race Name</P.HeaderCell>
-            <P.HeaderCell>Status</P.HeaderCell>
-         </P.Row>
+         <TP.Row>
+            <TP.HeaderCell>Id</TP.HeaderCell>
+            <TP.HeaderCell>Race Name</TP.HeaderCell>
+            <TP.HeaderCell>Status</TP.HeaderCell>
+         </TP.Row>
          {filteredRacesOrder?.map((id) => (
-            <P.Row key={races[id].id}>
-               <P.Cell><P.StyledLink to={'/races/' + races[id].id}>{races[id].id}</P.StyledLink></P.Cell>
-               <P.Cell><P.StyledLink to={'/races/' + races[id].id}>{races[id].name}</P.StyledLink></P.Cell>
-               <P.Cell><P.Label>{races[id].active ? 'Active' : 'Inactive'}</P.Label></P.Cell>
-            </P.Row>
+            <TP.Row key={races[id].id}>
+               <TP.Cell><P.StyledLink to={'/races/' + races[id].id}>{races[id].id}</P.StyledLink></TP.Cell>
+               <TP.Cell><P.StyledLink to={'/races/' + races[id].id}>{races[id].name}</P.StyledLink></TP.Cell>
+               <TP.Cell><TP.Label>{races[id].active ? 'Active' : 'Inactive'}</TP.Label></TP.Cell>
+            </TP.Row>
          ))}
       </P.RacesListWrapper>
    );

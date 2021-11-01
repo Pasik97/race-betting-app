@@ -11,6 +11,7 @@ exports[`<BetAmount /> should render label and input 1`] = `
   </p>
   <input
     className="sc-dkPtRN crMWyS"
+    disabled={false}
     name="betAmount"
     onChange={[Function]}
     value="12"

@@ -27,7 +27,7 @@ export const HeaderCell = styled(Cell)`
 
 export const Row = styled.div`
    display: grid;
-   grid-template-columns: 2fr 1fr;
+   grid-template-columns: 0.5fr 2fr 1fr;
    border: 1px solid #1a1a1a;
    border-top: none;
 
@@ -39,12 +39,12 @@ export const Row = styled.div`
 
    ${media.fromTablet} {
       display: grid;
-      grid-template-columns: 4fr 1fr;
+      grid-template-columns: 1fr 4fr 1.5fr;
    }
 
    ${media.fromDesktop} {
       display: grid;
-      grid-template-columns: 6fr 1fr;
+      grid-template-columns: 1fr 6fr 1.5fr;
    }
 `;
 

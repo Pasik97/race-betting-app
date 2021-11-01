@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { shallowEqual, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import * as P from './parts';
-import { getRaces } from 'store/races/selectors';
+import { getRaces, getRacesOrder } from 'store/races/selectors';
 
 const RacesList: React.FC = () => {
-   const races = useSelector(getRaces, shallowEqual);
+   const races = useSelector(getRaces);
+   const order = useSelector(getRacesOrder);
 
    const [shouldDisplayActive, setShouldDisplayActive] = useState<boolean>(false);
 
@@ -12,9 +13,9 @@ const RacesList: React.FC = () => {
       setShouldDisplayActive(event.target.checked);
    }
 
-   const filteredRaces = !shouldDisplayActive ? races : races?.filter(({ active }) => active);
+   const filteredRacesOrder = !shouldDisplayActive ? order : order?.filter((id) => races[id].active);
 
-   return !races ? null : (
+   return !order.length ? null : (
       <P.RacesListWrapper>
          <P.CheckboxWrapper>
             <P.Label>Show only active races:</P.Label>
@@ -26,17 +27,19 @@ const RacesList: React.FC = () => {
             />
          </P.CheckboxWrapper>
          <P.Row>
+            <P.HeaderCell>Id</P.HeaderCell>
             <P.HeaderCell>Race Name</P.HeaderCell>
             <P.HeaderCell>Status</P.HeaderCell>
          </P.Row>
-         {filteredRaces?.map((race) => (
-            <P.Row key={race.id}>
-               <P.Cell><P.StyledLink to={'/races/' + race.id}>{race.name}</P.StyledLink></P.Cell>
-               <P.Cell><P.Label>{race.active ? 'Active' : 'Inactive'}</P.Label></P.Cell>
+         {filteredRacesOrder?.map((id) => (
+            <P.Row key={races[id].id}>
+               <P.Cell><P.StyledLink to={'/races/' + races[id].id}>{races[id].id}</P.StyledLink></P.Cell>
+               <P.Cell><P.StyledLink to={'/races/' + races[id].id}>{races[id].name}</P.StyledLink></P.Cell>
+               <P.Cell><P.Label>{races[id].active ? 'Active' : 'Inactive'}</P.Label></P.Cell>
             </P.Row>
          ))}
       </P.RacesListWrapper>
-   )
-}
+   );
+};
 
 export default RacesList;

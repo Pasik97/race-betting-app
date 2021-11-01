@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RacesPage /> should render Loader and RacesList components 1`] = `
+<div
+  className="sc-bdvvtL eEHpxK"
+>
+  (LoaderWithOverlay /)
+  (RacesList /)
+</div>
+`;

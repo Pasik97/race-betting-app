@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render properly 1`] = `
+Array [
+  <header
+    className="sc-bdvvtL dktecm"
+  >
+    <a
+      className="sc-gsDKAQ gtcDQK"
+      href="/"
+      onClick={[Function]}
+      title="Race betting system"
+    >
+      Race betting system
+    </a>
+    <div
+      className="sc-dkPtRN jUPLyL"
+    >
+      <a
+        className="sc-hKwDye caybUZ"
+        href="/races"
+        onClick={[Function]}
+      >
+        Races
+      </a>
+    </div>
+  </header>,
+  <div
+    className="sc-cxpSdN fiqEb"
+  >
+    <p
+      className="sc-eCImPb eNWUA"
+    >
+      Welcome in races betting application. Use navigation to see current races.
+    </p>
+  </div>,
+]
+`;

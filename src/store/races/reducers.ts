@@ -16,21 +16,12 @@ const racesReducer = (state: C.RacesState = C.initilRacesState, action: C.RacesA
             isFetching: false,
          }
       case C.RaceActionType.GetRaceByIdSuccess:
-         const order = state.races[action.race.id] ? state.order : [...state.order, action.race.id];
-         const races: Record<string, C.RaceWithBet> = state.races[action.race.id] ?
-            { ...state.races, [action.race.id]: { ...state.races[action.race.id], ...action.race } }
-            : { ...state.races, [action.race.id]: action.race };
+         const { races, order } = H.getUpdatedRacesAndOrder(state, action.race);
 
          return {
             ...state,
             races,
             order,
-            isFetching: false,
-         }
-      case C.RaceActionType.GetRacesFail:
-      case C.RaceActionType.GetRaceByIdFail:
-         return {
-            ...state,
             isFetching: false,
          }
       case C.RaceActionType.SetRaceBetAmount:
@@ -65,6 +56,12 @@ const racesReducer = (state: C.RacesState = C.initilRacesState, action: C.RacesA
                   bet: betUpdatedPlaces,
                },
             },
+         }
+      case C.RaceActionType.GetRacesFail:
+      case C.RaceActionType.GetRaceByIdFail:
+         return {
+            ...state,
+            isFetching: false,
          }
       default:
          return state;

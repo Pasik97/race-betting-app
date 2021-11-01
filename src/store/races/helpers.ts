@@ -18,8 +18,26 @@ export const transformRacesToRacesState = (
     { races: { ...currentStateRaces }, order: [] },
 );
 
+export const getUpdatedRacesAndOrder = (currentState: C.RacesState, newRace: Race): Pick<C.RacesState, 'races' | 'order'> => {
+    const order = currentState.races[newRace.id]
+        ? currentState.order
+        : [...currentState.order, newRace.id];
+
+    const races: Record<string, C.RaceWithBet> = currentState.races[newRace.id]
+        ? {
+            ...currentState.races,
+            [newRace.id]: {
+                ...currentState.races[newRace.id],
+                ...newRace,
+            },
+        }
+        : { ...currentState.races, [newRace.id]: newRace };
+
+    return { order, races };
+}
+
 export const createBetWithUpdatedAmount = (currentRaceBet: C.Bet | undefined, amount: number): C.Bet => currentRaceBet
-    ? { ...currentRaceBet, amount: amount }
+    ? { ...currentRaceBet, amount }
     : { amount };
 
 export const createBetWithUpdatedPlace = (

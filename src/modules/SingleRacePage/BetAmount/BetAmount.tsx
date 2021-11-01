@@ -4,7 +4,7 @@ import * as P from './parts';
 import { setRaceBetAmount } from 'store/races/actions';
 import { doubleNumberRegex } from 'utils/validators';
 import ApplicationState from 'store/ApplicationState';
-import { getRaceBetAmountById } from 'store/races/selectors';
+import { getRaceActiveStatusById, getRaceBetAmountById } from 'store/races/selectors';
 
 interface BetAmountProps {
    raceId: string;
@@ -14,6 +14,7 @@ const BetAmount: React.FC<BetAmountProps> = (({ raceId }) => {
    const dispatch = useDispatch();
 
    const raceBetAmount = useSelector((state: ApplicationState) => getRaceBetAmountById(state, raceId));
+   const isRaceActive = useSelector((state: ApplicationState) => getRaceActiveStatusById(state, raceId));
 
    const [amount, setAmount] = useState<string>(raceBetAmount?.toString() || '0');
 
@@ -34,7 +35,7 @@ const BetAmount: React.FC<BetAmountProps> = (({ raceId }) => {
    return (
       <P.InputWrapper>
          <P.Label>Bet amount: </P.Label>
-         <P.Input name="betAmount" value={amount} onChange={setBetAmount} />
+         <P.Input name="betAmount" disabled={!isRaceActive} value={amount} onChange={setBetAmount} />
       </P.InputWrapper>
    )
 });

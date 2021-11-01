@@ -10,9 +10,9 @@ import { getParticipantsEmptyStatus } from 'store/participants/selectors';
 
 const ParticipantsList: React.FC<ParticipantsListProps> = (({ raceId }) => {
    const race = useSelector((state: ApplicationState) => getRaceById(state, raceId));
-   const participants = useSelector(getParticipantsEmptyStatus);
+   const areParticipantsEmpty = useSelector(getParticipantsEmptyStatus);
 
-   return !participants ? null : (
+   return areParticipantsEmpty ? null : (
       <P.ParticipantsListWrapper>
          <P.StyledRow>
             <TP.HeaderCell>Id</TP.HeaderCell>
